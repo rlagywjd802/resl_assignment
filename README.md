@@ -27,9 +27,11 @@ Overall:
 
 ## Usage
 Run the following command
-'roslaunch mnist_digit_tracker digit_tracker'
+```
+roslaunch mnist_digit_tracker digit_tracker
+```
 You can change parameters in mnist_digit_tracker.yaml.
-'''
+```xml
 publisher:
   topic: /digit/image
   queue_size: 1
@@ -47,10 +49,10 @@ tracker:
     dt: 0.01
   marker:
     rate: 20
-'''
+```
 publisher is parameters of mnist_digit_publisher and tracker is parameters of mnist_digit_checker and two_link_tracker.
 ## Learning
-Used Two layer net for learning MNIST dataset. You can train Neural Net by running train_nn.py.
+Used Two layer net for learning MNIST dataset. You can train Neural Net by running `train_nn.py`.
 TF trained data is stored in train_mnist/network. Weight values of trained data is stored in train_mnist/weight.
 Avg Loss/Epoch is as belows. Accuracy is about 92%.
 ## Two Link Manipulator
