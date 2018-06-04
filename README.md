@@ -30,7 +30,7 @@ Run the following command
 ```
 roslaunch mnist_digit_tracker digit_tracker
 ```
-You can change parameters in mnist_digit_tracker.yaml.
+You can change parameters in `mnist_digit_tracker.yaml`.
 ```xml
 publisher:
   topic: /digit/image
@@ -57,7 +57,7 @@ publisher is parameters of `mnist_digit_publisher.cpp` and tracker is parameters
 Used Two layer net for learning MNIST dataset. You can train Neural Net by running `train_nn.py`.
 TF trained data is stored in `train_mnist/network`. Weight values of trained data is stored in `train_mnist/weight`.
 Avg Loss/Epoch is as belows. 
-![alt text](https://github.com/rlagywjd802/resl_assignment/train_mnist/img/avg_loss.png)
+![alt text][avg_loss]
 Accuracy is about 92%.
 
 ## Two Link Manipulator
