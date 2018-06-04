@@ -49,8 +49,8 @@ class image_converter():
         point_array = []
         for pA in contours[max_index]:
             p = Point()
-            p.x = pA[max_index][0]
-            p.y = pA[max_index][1]
+            p.x = pA[0][0]
+            p.y = pA[0][1]
             p.z = 0
             point_array.append(p)
         
