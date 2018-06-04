@@ -38,7 +38,5 @@ plt.xlabel('Epoch')
 plt.ylabel('Avg Loss')
 plt.show()
 
-
 # Save network
 #network.save_network()
-
