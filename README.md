@@ -56,8 +56,10 @@ publisher is parameters of `mnist_digit_publisher.cpp` and tracker is parameters
 ## Learning
 Used Two layer net for learning MNIST dataset. You can train Neural Net by running `train_nn.py`.
 TF trained data is stored in `train_mnist/network`. Weight values of trained data is stored in `train_mnist/weight`.
-Avg Loss/Epoch is as belows. 
+
+Avg Loss/Epoch is looks like: 
 ![alt text][avg_loss]
+
 Accuracy is about 92%.
 
 ## Two Link Manipulator
