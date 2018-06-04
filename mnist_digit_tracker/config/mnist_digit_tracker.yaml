@@ -1,0 +1,18 @@
+publisher:
+  topic: /digit/image
+  queue_size: 1
+tracker:
+  image:
+    threshold: 100
+  two_link:
+    l1: 0.5
+    l2: 0.5
+  trajectory:
+    ratio: 0.02
+    offset: 0.6
+  control:
+    Kp: 70
+    dt: 0.01
+  marker:
+    rate: 20
+  

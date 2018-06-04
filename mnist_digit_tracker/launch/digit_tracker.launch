@@ -1,0 +1,18 @@
+<launch>
+  <arg name="model" default="$(find mnist_digit_tracker)/urdf/two_link.xacro"/>
+  <arg name="gui" default="True"/>
+  <arg name="rvizconfig" default="$(find two_link_ik)/launch/digit_tracker.rviz" />
+
+  <!--param name="robot_description" textfile="$(arg model)"/-->
+  <param name="use_gui" value="$(arg gui)"/>
+  <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
+
+  <rosparam command="load" file="$(find mnist_digit_tracker)/config/mnist_digit_tracker.yaml"/>
+
+  <!--node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher"/-->
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
+  <node pkg="mnist_digit_tracker" type="mnist_digit_checker.py" name="mnist_digit_checker" output="screen"/>
+  <node pkg="mnist_digit_tracker" type="two_link_tracker.py" name="two_link_tracker" output="screen"/>
+  <node pkg="mnist_digit_tracker" type="mnist_digit_publisher" name="mnist_digit_publisher" output="screen"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"/>
+</launch>

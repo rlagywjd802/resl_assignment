@@ -1,0 +1,4 @@
+int16 digit
+geometry_msgs/Point[] points
+---
+bool end

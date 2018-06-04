@@ -1,0 +1,2 @@
+model_checkpoint_path: "two_layer"
+all_model_checkpoint_paths: "two_layer"

@@ -1,0 +1,13 @@
+<launch>
+  <arg name="model" default="$(find mnist_digit_tracker)/urdf/two_link.urdf"/>
+  <arg name="gui" default="True"/>
+  <arg name="rvizconfig" default="$(find two_link_ik)/rviz/digit_tracker.rviz" />
+
+  <param name="robot_description" textfile="$(arg model)"/>
+  <param name="use_gui" value="$(arg gui)"/>
+
+  <!--node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher"/-->
+  <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
+  <node pkg="mnist_digit_tracker" type="two_link_ik.py" name="two_link_ik_node"/>
+  <!--node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" /-->
+</launch>
