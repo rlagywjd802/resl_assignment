@@ -35,6 +35,7 @@ You can change parameters in mnist_digit_tracker.yaml.
 publisher:
   topic: /digit/image
   queue_size: 1
+
 tracker:
   image:
     threshold: 100
@@ -50,11 +51,15 @@ tracker:
   marker:
     rate: 20
 ```
-publisher is parameters of mnist_digit_publisher and tracker is parameters of mnist_digit_checker and two_link_tracker.
+publisher is parameters of `mnist_digit_publisher.cpp` and tracker is parameters of `mnist_digit_checker.py` and `two_link_tracker.py`.
+
 ## Learning
 Used Two layer net for learning MNIST dataset. You can train Neural Net by running `train_nn.py`.
-TF trained data is stored in train_mnist/network. Weight values of trained data is stored in train_mnist/weight.
-Avg Loss/Epoch is as belows. Accuracy is about 92%.
+TF trained data is stored in `train_mnist/network`. Weight values of trained data is stored in `train_mnist/weight`.
+Avg Loss/Epoch is as belows. 
+![alt text](https://github.com/rlagywjd802/resl_assignment/train_mnist/img/avg_loss.png)
+Accuracy is about 92%.
+
 ## Two Link Manipulator
 ### Forward Kinematics
 ### Inverse Kinematics
