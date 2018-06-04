@@ -58,7 +58,7 @@ Used Two layer net for learning MNIST dataset. You can train Neural Net by runni
 TF trained data is stored in `train_mnist/network`. Weight values of trained data is stored in `train_mnist/weight`.
 
 Avg Loss/Epoch is looks like: 
-![alt text][avg_loss]
+![alt text](./imgs/avg_loss.png "average loss")
 
 Accuracy is about 92%.
 
