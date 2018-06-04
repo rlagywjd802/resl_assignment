@@ -30,6 +30,8 @@ Run the following command
 ```
 roslaunch mnist_digit_tracker digit_tracker
 ```
+![alt text](./imgs/mnist_digit_tracker.gif "mnist_digit_tracker")
+
 You can change parameters in `mnist_digit_tracker.yaml`.
 ```xml
 publisher:
