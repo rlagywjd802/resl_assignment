@@ -65,11 +65,29 @@ Avg Loss/Epoch is looks like:
 
 Accuracy is about 92%.
 
-## Two Link Manipulator
+## Robotics
 ### Forward Kinematics
 ### Inverse Kinematics
-## Nodes
-### Node1 : mnist_digit_publisher
-### Node2 : mnist_digit_checker
-### Node3 : two_link_tracker
+### Jacobian Inverse
+```python
+x = self.forward_kinematics(q)	
+x_dot = self.Kp*(xd-x)
+q_dot = np.dot(self.jacobian_inverse(q), x_dot)
+q = q + q_dot*self.dt
+```
 ## Problems
+1. wrong prediction
+Since accuracy of trained neural net is 92%, sometimes it predicts wrong answer.
+![alt text](./imgs/prob_wrong_prediction.png "prob1")
+Accuracy can be imporeved by changing two layer net to multylayer convolutional neural net.
+
+2. contour
+Because of the threshold value, there is some disconnection in thresholded image of '0'.
+![alt text](./imgs/prob_threshold.png "prob2_1")
+It can be imporved by lowering threshold value. But sometimes lowering threshold value is not enough in case like:
+![alt text](./imgs/prob_disconnected.png "prob2_2")
+If the image of '0' itself is disconnected, countour cannot be round shaped.
+
+3. getting slower
+After multiple tries of pressing the digit, there is some delay in displaying.
+![alt text](./imgs/prob_slower.gif "prob3")
