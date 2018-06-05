@@ -58,7 +58,9 @@ public:
 
 DigitPublisher::DigitPublisher(): it(nh), test_images(), test_labels()
 {
-	nh.param("/publisher/topic", topic_name)
+	std::string topic_name;
+	int queue_size;
+	nh.param("/publisher/topic", topic_name, std::string("/digit_image"));
 	nh.param("/publisher/queue_size", queue_size)
 	image_pub = it.advertise(topic_name, queue_size);
 	//image_pub = it.advertise("/digit_image", 1);
