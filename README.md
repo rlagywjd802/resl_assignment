@@ -63,12 +63,17 @@ Avg Loss/Epoch is looks like:
 
 ![alt text](./imgs/avg_loss.png "average loss")
 
-Accuracy is about 92%.
+Accuracy is about **92%**.
 
 ## Robotics
 ### Forward Kinematics
+![alt text](./imgs/forward_kinematics.png "eq1")
+
 ### Inverse Kinematics
+![alt text](./imgs/inverse_kinematics.png "eq2")
+
 ### Jacobian Inverse
+![alt text](./imgs/jacobian.png "eq3")
 ```python
 x = self.forward_kinematics(q)	
 x_dot = self.Kp*(xd-x)
@@ -76,18 +81,31 @@ q_dot = np.dot(self.jacobian_inverse(q), x_dot)
 q = q + q_dot*self.dt
 ```
 ## Problems
-1. wrong prediction
+
+### Wrong Prediction
+
 Since accuracy of trained neural net is 92%, sometimes it predicts wrong answer.
+
 ![alt text](./imgs/prob_wrong_prediction.png "prob1")
+
 Accuracy can be imporeved by changing two layer net to multylayer convolutional neural net.
 
-2. contour
+
+### Contour
+
 Because of the threshold value, there is some disconnection in thresholded image of '0'.
+
 ![alt text](./imgs/prob_threshold.png "prob2_1")
+
 It can be imporved by lowering threshold value. But sometimes lowering threshold value is not enough in case like:
+
 ![alt text](./imgs/prob_disconnected.png "prob2_2")
+
 If the image of '0' itself is disconnected, countour cannot be round shaped.
 
-3. getting slower
+
+### Getting Slower
+
 After multiple tries of pressing the digit, there is some delay in displaying.
+
 ![alt text](./imgs/prob_slower.gif "prob3")
